@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Tenses 100-Question Exam - House of J&S</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --success-color: #2f855a;
+            --error-color: #c53030;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-color: #2d3748;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Pyidaungsu', 'Myanmar3';
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Header Style */
+        .header {
+            text-align: center;
+            border-bottom: 3px double #e2e8f0;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        /* Fixed & Optimized Logo Layout */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .logo-img {
+            max-height: 75px; /* Professional size limit */
+            max-width: 200px;  
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 8px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .header h2 {
+            color: var(--secondary-color);
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .meta-info {
+            font-size: 14px;
+            color: #4a5568;
+            background: #edf2f7;
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Student Info Box Section */
+        .student-info-section {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .student-info-section.hidden {
+            display: none;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .info-group {
+            margin-bottom: 0;
+        }
+
+        .info-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: var(--primary-color);
+            font-size: 14px;
+        }
+
+        .info-input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .info-input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+        }
+
+        /* Student Display Table after Submission */
+        .student-display-box {
+            display: none;
+            background: #edf2f7;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: left;
+            font-size: 15px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        /* Section Title */
+        .section-title {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin: 25px 0 15px 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Question Card */
+        .question-block {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 15px;
+            color: #1a202c;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+        }
+
+        /* Button */
+        .submit-btn {
+            display: block;
+            width: 100%;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-color);
+        }
+
+        /* Results Screen */
+        #result-section {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background: #f0fff4;
+            border: 2px solid #c6f6d5;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        #result-section h2 {
+            color: var(--success-color);
+            margin-bottom: 15px;
+        }
+
+        .score-display {
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .grade-display {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Feedback Styles */
+        .feedback {
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            display: none;
+        }
+
+        .correct-ans {
+            color: var(--success-color);
+            background: #f0fff4;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 5px;
+            border-left: 4px solid var(--success-color);
+        }
+
+        .wrong-ans {
+            color: var(--error-color);
+            background: #fff5f5;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 5px;
+            border-left: 4px solid var(--error-color);
+        }
+        /* Fixed & Optimized Logo Layout - Increased Size */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    max-height: 140px; /* အရင် 75px မှ 140px သို့ တိုးမြှင့်ထားပါသည် */
+    max-width: 280px;  /* အရင် 200px မှ 280px သို့ တိုးမြှင့်ထားပါသည် */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <!-- Organized Logo Section -->
+        <div class="logo-container">
+            <img src="logo1.png" alt="Logo" class="logo-img" onerror="this.style.display='none';">
+        </div>
+        <h1>House of J&S Computer Training Center</h1>
+        <h2>English Tenses Examination</h2>
+        <div class="meta-info">
+            <strong>Time Allowed:</strong> 2 Hours | <strong>Total Score:</strong> 100 Marks
+        </div>
+    </div>
+
+    <!-- Student Info Box with English labels -->
+    <div class="student-info-section" id="student-info-form">
+        <div class="info-grid">
+            <div class="info-group">
+                <label for="student-name">Student Name *</label>
+                <input type="text" id="student-name" class="info-input" placeholder="Enter your full name..." required>
+            </div>
+            <div class="info-group">
+                <label for="student-roll">Roll No. / Student ID *</label>
+                <input type="text" id="student-roll" class="info-input" placeholder="Enter your roll number or ID..." required>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result section with English info -->
+    <div id="result-section">
+        <h2>🎉 Examination Submitted Successfully!</h2>
+        
+        <div class="student-display-box" id="student-meta-display"></div>
+
+        <div class="score-display" id="score-text">0 / 100</div>
+        <div class="grade-display" id="grade-text">Grade - </div>
+        <p>You can review the correct and incorrect answers for each question below.</p>
+    </div>
+
+    <form id="quiz-form" onsubmit="evaluateQuiz(event)">
+        <div id="quiz-questions"></div>
+        <button type="submit" class="submit-btn">Submit & Check Answers</button>
+    </form>
+</div>
+
+<script>
+    // 100 Questions Data
+    const quizData = [
+        // 1. Simple Present (1-20)
+        { category: "၁။ Simple Present Tense (ပစ္စုပ္ပန်ရိုးရိုး)", q: "၁။ ကျွန်တော် မနက်တိုင်း ၆ နာရီမှာ အိပ်ရာထတယ်။", answers: ["I get up at 6 o'clock every morning.", "I wake up at 6 o'clock every morning."] },
+        { q: "၂။ သူ (ယောက်ျားလေး) က ကော်ဖီထက် လက်ဖက်ရည်ကို ပိုကြိုက်တယ်။", answers: ["He prefers tea to coffee."] },
+        { q: "၃။ နေမင်းက အရှေ့အရပ်ကနေ ထွက်တယ်။", answers: ["The sun rises in the east."] },
+        { q: "၄။ သူတို့က ရန်ကုန်မှာ နေထိုင်ကြတယ်။", answers: ["They live in Yangon."] },
+        { q: "၅။ ကျွန်မ အစ်မက ဆေးရုံတစ်ခုမှာ အလုပ်လုပ်တယ်။", answers: ["My older sister works at a hospital.", "My elder sister works at a hospital."] },
+        { q: "၆။ ကြောင်တွေက ကြွက်ဖမ်းရတာကို ဝါသနာပါကြတယ်။", answers: ["Cats like catching mice.", "Cats love to catch mice."] },
+        { q: "၇။ မင်း အင်္ဂလိပ်စာ စကားပြော သင်တန်း တက်လား။", answers: ["Do you attend an English speaking class?", "Do you attend an English speaking course?"] },
+        { q: "၈။ သူမက အသားမစားဘူး၊ သူမက သက်သက်လွတ်သမားဖြစ်တယ်။", answers: ["She does not eat meat; she is a vegetarian.", "She doesn't eat meat; she is a vegetarian."] },
+        { q: "၉။ စနေ၊ တနင်္ဂနွေတွေမှာ ကျွန်တော်တို့ ဘောလုံးကစားလေ့ရှိတယ်။", answers: ["We usually play football on weekends.", "We usually play soccer on weekends."] },
+        { q: "၁၀။ ဒီရထားက မနက် ၈ နာရီမှာ စထွက်တာလား။", answers: ["Does this train leave at 8 AM?", "Does this train leave at 8 o'clock in the morning?"] },
+        { q: "၁၁။ သူက အချိန်မှန် ဘယ်တော့မှ မလာဘူး။", answers: ["He never comes on time."] },
+        { q: "၁၂။ ရေက အပူချိန် ၁၀၀ ဒီဂရီစင်တီဂရိတ်မှာ ဆူပွက်တယ်။", answers: ["Water boils at 100°C.", "Water boils at 100 degrees celsius."] },
+        { q: "၁၃။ ငှက်တွေ ကောင်းကင်မှာ ပျံသန်းကြတယ်။", answers: ["Birds fly in the sky."] },
+        { q: "၁၄။ ကျွန်တော် အားလပ်ချိန်မှာ သီချင်းနားထောင်ရတာ ကြိုက်တယ်။", answers: ["I like listening to music in my free time.", "I like to listen to music in my free time."] },
+        { q: "၁၅။ သူ (ယောက်ျားလေး) က အင်္ဂလိပ်စကား ကောင်းကောင်းပြောတတ်တယ်။", answers: ["He speaks English well."] },
+        { q: "၁၆။ ဆရာမက ကျွန်တော်တို့ကို စာကျနစွာ သင်ပေးတယ်။", answers: ["The teacher teaches us carefully.", "The teacher teaches us well."] },
+        { q: "၁၇။ မင်း ကွန်ပျူတာ အသုံးပြုတတ်လား။", answers: ["Do you know how to use a computer?", "Can you use a computer?"] },
+        { q: "၁၈။ ကျွန်တော်တို့ တနင်္လာနေ့တိုင်း သင်တန်းတက်ရတယ်။", answers: ["We attend class every Monday.", "We go to class every Monday."] },
+        { q: "၁၉။ ကလေးက နွားနို့ သောက်ရတာ ကြိုက်တယ်။", answers: ["The baby likes drinking milk.", "The baby likes to drink milk."] },
+        { q: "၂၀။ ဖခင်က နေ့တိုင်း သတင်းစာ ဖတ်တယ်။", answers: ["Father reads the newspaper every day.", "My father reads the newspaper every day."] },
+
+        // 2. Present Continuous (21-40)
+        { category: "၂။ Present Continuous Tense (လက်ရှိဖြစ်ဆဲ)", q: "၂၁။ အခု အပြင်မှာ မိုးရွာနေတယ်။", answers: ["It is raining outside now.", "It's raining outside now."] },
+        { q: "၂၂။ ကျွန်တော် အခု အင်္ဂလိပ်စာ လေ့ကျင့်ခန်း လုပ်နေတာ။", answers: ["I am doing an English exercise right now.", "I'm doing an English exercise right now."] },
+        { q: "၂၃။ ကလေးတွေ ခြံထဲမှာ ဆော့ကစားနေကြတယ်။", answers: ["The children are playing in the yard.", "The kids are playing in the yard."] },
+        { q: "၂၄။ နင့်အမေက မီးဖိုချောင်ထဲမှာ ချက်ပြုတ်နေတာလား။", answers: ["Is your mother cooking in the kitchen?"] },
+        { q: "၂၅။ သူတို့က အစည်းအဝေးခန်းထဲမှာ စကားပြောနေကြတယ်။", answers: ["They are talking in the meeting room.", "They are speaking in the meeting room."] },
+        { q: "၂၆။ နားထောင်ကြည့်စမ်း၊ ငှက်ကလေးတွေ သီချင်းဆိုနေကြတယ်။", answers: ["Listen! The birds are singing."] },
+        { q: "၂၇။ သူမက ဖုန်းနဲ့ စာရိုက်နေတာ (မက်ဆေ့ခ်ျပို့နေတာ) ဖြစ်တယ်။", answers: ["She is texting on her phone.", "She is sending a message on her phone."] },
+        { q: "၂၈။ ကျွန်တော် အခု တီဗီကြည့်နေတာ မဟုတ်ပါဘူး။", answers: ["I am not watching TV right now.", "I'm not watching television right now."] },
+        { q: "၂၉။ မင်း ဘာလုပ်နေတာလဲ။", answers: ["What are you doing?"] },
+        { q: "၃၀။ သူ (ယောက်ျားလေး) က ကားအသစ်တစ်စီး ဝယ်ဖို့ ပိုက်ဆံစုနေတယ်။", answers: ["He is saving money to buy a new car."] },
+        { q: "၃၁။ လေပြေအေးတွေ တိုက်ခတ်နေတယ်။", answers: ["Cool breezes are blowing."] },
+        { q: "၃၂။ စာမေးပွဲနီးလာလို့ ကျောင်းသားတွေ စာကြိုးစားနေကြတယ်။", answers: ["The students are studying hard because the exam is near."] },
+        { q: "၃၃။ ကျွန်တော် သူငယ်ချင်းကို စောင့်နေတာ။", answers: ["I am waiting for my friend.", "I'm waiting for a friend."] },
+        { q: "၃၄။ သူတို့ စက်ဘီး စီးနေကြတယ်။", answers: ["They are riding bicycles.", "They are riding bikes."] },
+        { q: "၃၅။ အစ်ကိုက ဂစ်တာတီးနေတယ်။", answers: ["My older brother is playing the guitar.", "My brother is playing the guitar."] },
+        { q: "၃၆။ ကြောင်ကလေးက ကုတင်ပေါ်မှာ အိပ်ပျော်နေတယ်။", answers: ["The kitten is sleeping on the bed.", "The cat is sleeping on the bed."] },
+        { q: "၃၇။ မင်း အခု ဘယ်ကို သွားနေတာလဲ။", answers: ["Where are you going right now?", "Where are you going now?"] },
+        { q: "၃၈။ ဆရာက ကျောက်သင်ပုန်းပေါ်မှာ စာရေးနေတယ်။", answers: ["The teacher is writing on the whiteboard.", "The teacher is writing on the blackboard."] },
+        { q: "၃၉။ ကျွန်တော်တို့ ညစာ စားနေကြတာ။", answers: ["We are having dinner.", "We are eating dinner."] },
+        { q: "၄၀။ သူမ သီချင်းအသစ်တစ်ပုဒ်ကို နားထောင်နေတယ်။", answers: ["She is listening to a new song."] },
+
+        // 3. Simple Past (41-60)
+        { category: "၃။ Simple Past Tense (အတိတ်ရိုးရိုး)", q: "၄၁။ ကျွန်တော် မနေ့က သူငယ်ချင်းနဲ့ တွေ့ခဲ့တယ်။", answers: ["I met my friend yesterday."] },
+        { q: "၄၂။ သူမ လွန်ခဲ့တဲ့ နှစ်နှစ်က ဒီတက္ကသိုလ်ကနေ ဘွဲ့ရခဲ့တာ။", answers: ["She graduated from this university two years ago."] },
+        { q: "၄၃။ သူတို့ ပြီးခဲ့တဲ့ အပတ်က ရုပ်ရှင်အသစ် သွားကြည့်ခဲ့ကြတယ်။", answers: ["They went to see a new movie last week.", "They watched a new movie last week."] },
+        { q: "၄၄။ မင်း မနေ့ညက အိပ်ပျော်ရဲ့လား။", answers: ["Did you sleep well last night?"] },
+        { q: "၄၅။ ကျွန်မ မနက်စာအတွက် မုန့်ဟင်းခါး စားခဲ့တယ်။", answers: ["I ate Mohinga for breakfast."] },
+        { q: "၄၆။ သူက ကျွန်တော့်ကို ဖုန်းမဆက်ခဲ့ပါဘူး။", answers: ["He did not call me.", "He didn't call me."] },
+        { q: "၄၇။ ကိုဗစ်မတိုင်ခင်က ကျွန်တော်တို့ ဂျပန်နိုင်ငံကို လည်ပတ်ခဲ့ဖူးတယ်။", answers: ["We visited Japan before COVID-19."] },
+        { q: "၄၈။ သူငယ်ချင်းက သူ့မွေးနေ့ပွဲအတွက် ကျွန်တော့်ကို ဖိတ်ခဲ့တယ်။", answers: ["My friend invited me to his birthday party."] },
+        { q: "၄၉။ မင်း ဒီဖိနပ်ကို ဘယ်မှာ ဝယ်ခဲ့တာလဲ။", answers: ["Where did you buy these shoes?"] },
+        { q: "၅၀။ မနေ့က ရာသီဥတုက တော်တော်လေး ပူခဲ့တယ်။", answers: ["The weather was quite hot yesterday.", "The weather was very hot yesterday."] },
+        { q: "၅၁။ သူမက သော့ပျောက်သွားလို့ အိမ်ထဲဝင်မရဖြစ်ခဲ့တယ်။", answers: ["She lost her keys, so she could not get into the house.", "She lost her keys, so she couldn't enter the house."] },
+        { q: "၅၂။ လွန်ခဲ့တဲ့ နာရီဝက်က မီးပျက်သွားတယ်။", answers: ["The power went out half an hour ago.", "The electricity went off half an hour ago."] },
+        { q: "၅၃။ ကျွန်တော် ပြီးခဲ့တဲ့လက ဖုန်းအသစ်တစ်လုံး ဝယ်ခဲ့တယ်။", answers: ["I bought a new phone last month."] },
+        { q: "၅၄။ သူတို့ မနက်က ဘတ်စကား လွဲသွားခဲ့တယ်။", answers: ["They missed the bus this morning."] },
+        { q: "၅၅။ မင်း လွန်ခဲ့တဲ့အပတ်က စာမေးပွဲ အောင်ခဲ့လား။", answers: ["Did you pass the exam last week?"] },
+        { q: "၅၆။ ကျွန်တော် မနေ့က တစ်နေကုန် စာကြည့်တိုက်မှာ စာဖတ်ခဲ့တယ်။", answers: ["I read at the library all day yesterday."] },
+        { q: "၅၇။ သူမ ပြီးခဲ့တဲ့ သောကြာနေ့က ပွဲတစ်ခုကို တက်ရောက်ခဲ့တယ်။", answers: ["She attended a party last Friday.", "She attended an event last Friday."] },
+        { q: "၅၈။ ကျွန်တော်တို့ Ngai ngai ka di pan kyan hmar sawခဲ့ကြတယ်။", answers: ["We played in this park when we were young.", "We played in this park when we were children."] },
+        { q: "၅၉။ သူ (ယောက်ျားလေး) ပြီးခဲ့တဲ့ညက နောက်ကျမှ အိမ်ပြန်ရောက်တယ်။", answers: ["He came back home late last night.", "He returned home late last night."] },
+        { q: "၆၀။ ငလျင်က လွန်ခဲ့တဲ့ ရက်သတ္တပတ်က လှုပ်ခတ်ခဲ့တာ။", answers: ["The earthquake struck last week.", "The earthquake happened last week."] },
+
+        // 4. Present Perfect (61-80)
+        { category: "၄။ Present Perfect Tense (ပစ္စုပ္ပန်ပြီးပြည့်စုံ)", q: "၆၁။ ကျွန်တော် နေ့လယ်စာ စားပြီးပြီ။", answers: ["I have already eaten lunch.", "I've already had lunch.", "I have eaten lunch."] },
+        { q: "၆၂။ သူမ ကားမောင်းသင်တန်း အောင်ပြီးသွားပြီ။", answers: ["She has passed her driving test.", "She has passed her driving exam."] },
+        { q: "၆ club။ မင်း အီတလီအစားအစာ စားဖူးလား။", answers: ["Have you ever eaten Italian food?", "Have you ever tried Italian food?"] },
+        { q: "၆၄။ သူတို့ ဒီအိမ်မှာ နေလာတာ ၁၀ နှစ်ရှိပြီ။", answers: ["They have lived in this house for 10 years."] },
+        { q: "၆၅။ ကျွန်တော် ဒီစာအုပ်ကို သုံးကြိမ်မက ဖတ်ဖူးတယ်။", answers: ["I have read this book more than three times."] },
+        { q: "၆၆။ သူက အလုပ်ကနေ အိမ်ကို ပြန်မလာသေးဘူး။", answers: ["He has not come back home from work yet.", "He hasn't returned home from work yet."] },
+        { q: "၆၇။ မင်း အင်္ဂလန်နိုင်ငံကို ရောက်ဖူးလား။", answers: ["Have you ever been to England?"] },
+        { q: "၆base။ ကျွန်မ သော့ ပျောက်သွားပြီ။", answers: ["I have lost my keys.", "I've lost my keys."] },
+        { q: "၆၉။ သူတို့ တရားဝင် လမ်းခွဲလိုက်ကြပြီ။", answers: ["They have officially broken up."] },
+        { q: "၇၀။ မင်း ဒီသတင်းကို ကြားပြီးပြီလား။", answers: ["Have you heard this news?", "Have you already heard this news?"] },
+        { q: "၇၁။ ကျွန်တော် သူမကို Ngai ngai ka tae ka thi tharခဲ့တာ။", answers: ["I have known her since we were young."] },
+        { q: "၇၂။ မိုးရွာတာ အခုမှ စဲသွားတယ်။", answers: ["The rain has just stopped."] },
+        { q: "၇၃။ ဆရာဝန်က လူနာကို စစ်ဆေးပြီးသွားပြီ။", answers: ["The doctor has examined the patient.", "The doctor has checked the patient."] },
+        { q: "၇၄။ ကျွန်တော် အလုပ်အားလုံး ပြီးသွားပြီ။", answers: ["I have finished all the work.", "I've finished all my work."] },
+        { q: "၇၅။ သူမ စာစီစာကုံး ရေးလို့ ပြီးသွားပြီလား။", answers: ["Has she finished writing the essay?"] },
+        { q: "၇ sky။ သူတို့ ဗီဇာ လျှောက်ထားပြီးပါပြီ။", answers: ["They have applied for a visa."] },
+        { q: "၇၇။ အားကစားပွဲ အခုလေးတင် စတင်လိုက်ပြီ။", answers: ["The sports event has just started.", "The game has just started."] },
+        { q: "၇၈။ မင်း ဒီရုပ်ရှင်ကို ကြည့်ဖူးလား။", answers: ["Have you seen this movie?", "Have you watched this movie?"] },
+        { q: "၇၉။ သူငယ်ချင်းက ကွန်ပျူတာ အသစ်တစ်လုံး ဝယ်ထားတယ်။", answers: ["My friend has bought a new computer."] },
+        { q: "၈၀။ ကျွန်တော်တို့ စာချုပ် လက်မှတ်ရေးထိုးပြီးပါပြီ။", answers: ["We have signed the contract."] },
+
+        // 5. Past Perfect (81-100)
+        { category: "၅။ Past Perfect Tense (အတိတ်ပြီးပြည့်စုံ)", q: "၈၁။ ကျွန်တော် ဘူတာရုံကို ရောက်တဲ့အချိန်မှာ ရထားက ထွက်သွားနှင့်ပြီ။", answers: ["When I arrived at the station, the train had already left."] },
+        { q: "၈၂။ သူမ အိမ်ကို မပြန်ခင် အလုပ်တွေကို အကုန်အပြီးလုပ်ခဲ့တယ်။", answers: ["She had finished all her work before she went home."] },
+        { q: "၈၃။ ကျွန်တော် မနေ့က ကြည့်ခဲ့တဲ့ ရုပ်ရှင်က အရင်က တစ်ခါမှ မကြည့်ဖူးတဲ့ ရုပ်ရှင်မျိုးပဲ။", answers: ["The movie I watched yesterday was a kind I had never seen before."] },
+        { q: "၈၄။ သူတို့ အပြင်မသွားခင် မိုးက ရွာနှင့်နေပြီ။", answers: ["The rain had started before they went out."] },
+        { q: "၈၅။ မင်း မမေးခင်ကတည်းက သူက အဖြေကို သိနှင့်ပြီးသား။", answers: ["He had already known the answer before you asked."] },
+        { q: "၈၆။ ကျွန်တော် အိပ်ရာမဝင်ခင် စာအုပ်တစ်အုပ် ဖတ်ခဲ့တယ်။", answers: ["I had read a book before I went to bed."] },
+        { q: "၈၇။ ဆရာမ အတန်းထဲဝင်လာတဲ့အချိန်မှာ ကျောင်းသားတွေက စာကျက်နေနှင့်ကြပြီ။", answers: ["When the teacher entered the classroom, the students had already been studying.", "When the teacher entered the classroom, the students had already studied."] },
+        { q: "၈၈။ သူက ပိုက်ဆံအိတ် ပျောက်သွားခဲ့မှန်း အိမ်ရောက်မှ သတိထားမိတယ်။", answers: ["He noticed that he had lost his wallet only when he got home."] },
+        { q: "၈၉။ ကျွန်မ စားသောက်ဆိုင်ကို ရောက်တော့ သူငယ်ချင်းက စားစရာတွေ မှာထားနှင့်ပြီ။", answers: ["When I arrived at the restaurant, my friend had already ordered food."] },
+        { q: "၉၀။ သူတို့ မင်္ဂလာဆောင်တာ လွန်ခဲ့တဲ့လကမှဖြစ်ပေမဲ့ အဲဒီမတိုင်ခင် ၅ နှစ်ကတည်းက ချစ်သူတွေ ဖြစ်ခဲ့ကြတာ။", answers: ["Although they got married last month, they had been lovers for 5 years before that."] },
+        { q: "၉၁။ ရဲတွေ ရောက်လာတဲ့အချိန်မှာ သူခိုးက ထွက်ပြေးလွတ်မြောက်သွားပြီ။", answers: ["When the police arrived, the thief had already escaped."] },
+        { q: "၉၂။ ကျွန်တော် မနှစ်က အလုပ်မပြောင်းခင် အဲဒီကုမ္ပဏီမှာ ၃ နှစ်ကြာ အလုပ်လုပ်ခဲ့ဖူးတယ်။", answers: ["I had worked at that company for 3 years before I changed jobs last year."] },
+        { q: "၉၃။ ကျွန်တော် ဖုန်းမဆက်ခင် သူက အစီရင်ခံစာကို ပို့ထားပြီးသား။", answers: ["He had sent the report before I called."] },
+        { q: "၉၄။ မီးမလာခင် သူတို့ ထမင်းချက်ပြီးသွားပြီ။", answers: ["They had cooked rice before the power came back.", "They had cooked before the electricity came on."] },
+        { q: "၉၅။ ကျွန်တော် သတင်းစာ မဖတ်ရသေးခင် သူက သတင်းကို ပြောပြခဲ့တယ်။", answers: ["He had told me the news before I read the newspaper."]},
+        { q: "၉၆။ အားလုံး အဆင်သင့်မဖြစ်ခင် ဆိုင်က ပိတ်နှင့်သွားပြီ။", answers: ["The shop had closed before everyone was ready."]},
+        { q: "၉၇။ သူတို့ ခရီးမထွက်ခင် ဟိုတယ် အခန်းကို ကြိုတင်မှာယူခဲ့ကြတယ်။", answers: ["They had booked a hotel room before they went on a trip."]},
+        { q: "၉၈။ ကျွန်တော် မီးမီးကို မတွေ့ခင် သူက စာမေးပွဲ အောင်စာရင်း သိနှင့်ပြီးပြီ။", answers: ["He had already known the exam results before I met Mimi."]},
+        { q: "၉၉။ နေမဝင်ခင် ကျွန်တော်တို့ ပန်းတိုင်ကို ရောက်နှင့်ခဲ့တယ်။", answers: ["We had reached our destination before the sun set."]},
+        { q: "၁၀၀။ လေယာဉ် မဆင်းသက်ခင် ရာသီဥတုက ဆိုးဝါးနှင့်နေပြီ။", answers: ["The weather had become bad before the plane landed."]}
+    ];
+
+    // Generate Layout Questions
+    const questionsContainer = document.getElementById('quiz-questions');
+    
+    quizData.forEach((item, index) => {
+        if(item.category) {
+            const catHeader = document.createElement('div');
+            catHeader.className = 'section-title';
+            catHeader.innerText = item.category;
+            questionsContainer.appendChild(catHeader);
+        }
+
+        const qBlock = document.createElement('div');
+        qBlock.className = 'question-block';
+        qBlock.innerHTML = `
+            <div class="question-text">${item.q}</div>
+            <input type="text" class="input-field" id="q-${index}" autocomplete="off" placeholder="Translate into English...">
+            <div class="feedback" id="feedback-${index}"></div>
+        `;
+        questionsContainer.appendChild(qBlock);
+    });
+
+    // Evaluation Logic
+    function evaluateQuiz(event) {
+        event.preventDefault();
+
+        // Validate Student Info Box first
+        const studentName = document.getElementById('student-name').value.trim();
+        const studentRoll = document.getElementById('student-roll').value.trim();
+
+        if (!studentName || !studentRoll) {
+            alert("Please fill in your Name and Roll No. / Student ID before submitting.");
+            document.getElementById('student-name').focus();
+            return;
+        }
+
+        let score = 0;
+
+        quizData.forEach((item, index) => {
+            const inputVal = document.getElementById(`q-${index}`).value.trim().toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?]/g,"");
+            const feedbackDiv = document.getElementById(`feedback-${index}`);
+            
+            // Match English answers
+            let isCorrect = item.answers.some(ans => {
+                let cleanAns = ans.trim().toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?]/g,"");
+                return inputVal === cleanAns;
+            });
+
+            feedbackDiv.style.display = 'block';
+            if (isCorrect) {
+                score++;
+                feedbackDiv.innerHTML = `<div class="correct-ans">✓ Correct! (${item.answers[0]})</div>`;
+            } else {
+                feedbackDiv.innerHTML = `
+                    <div class="wrong-ans">
+                        ✗ Incorrect. <br>
+                        <strong>Correct Answer:</strong> ${item.answers.join(' OR ')}
+                    </div>`;
+            }
+        });
+
+        // Hide inputs box and show results with name display
+        document.getElementById('student-info-form').classList.add('hidden');
+        
+        const metaDisplayBox = document.getElementById('student-meta-display');
+        metaDisplayBox.style.display = 'block';
+        metaDisplayBox.innerHTML = `
+            <strong>Student Name:</strong> ${studentName} <br>
+            <strong>Roll No. / ID:</strong> ${studentRoll}
+        `;
+
+        // Show Score and Grading
+        document.getElementById('result-section').style.display = 'block';
+        document.getElementById('score-text').innerText = `${score} / 100`;
+        
+        let grade = "F";
+        if (score >= 90) grade = "A+";
+        else if (score >= 80) grade = "A";
+        else if (score >= 70) grade = "B";
+        else if (score >= 50) grade = "C";
+        else if (score >= 40) grade = "D";
+        
+        document.getElementById('grade-text').innerText = `Grade: ${grade}`;
+        
+        // Scroll back to top to view score
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+</script>
+
+</body>
+</html>
